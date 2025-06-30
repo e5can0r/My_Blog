@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Base global styles */
+html,
+body {
+  @apply bg-gray-100 text-gray-900 font-sans;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* Smooth transitions for buttons, links, etc. */
+button,
+a {
+  @apply transition duration-200 ease-in-out;
+}

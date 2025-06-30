@@ -1,0 +1,139 @@
+/* ---------- Base Styling ---------- */
+:root {
+  --primary: #6366f1; /* indigo-500 */
+  --bg: #f9fafb;       /* slate-50 */
+  --text: #111827;     /* gray-900 */
+  --muted: #6b7280;     /* gray-500 */
+  --radius: 0.75rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #4f46e5; /* darker indigo */
+}
+
+/* ---------- Layout ---------- */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  height: 4rem;
+  transition: transform 0.3s ease, filter 300ms;
+  will-change: transform, filter;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1em var(--primary));
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Buttons ---------- */
+button,
+.btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* ---------- Inputs ---------- */
+input,
+select,
+textarea {
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: var(--radius);
+  width: 100%;
+  font-size: 1rem;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* ---------- Utility ---------- */
+.read-the-docs {
+  color: var(--muted);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  #root {
+    padding: 1.5rem 1rem;
+  }
+
+  .logo {
+    height: 3.5rem;
+  }
+}
